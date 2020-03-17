@@ -6,6 +6,14 @@ public class Main {
         Que queObject = new Que();
         queObject.createQues();
         queObject.onToNextQues();
+       /* queObject.onToNextQues();
+        queObject.onToNextQues();
+        queObject.onToNextQues();
+        queObject.onToNextQues();
+        queObject.onToNextQues();
+        queObject.onToNextQues();
+        queObject.onToNextQues();
+        queObject.onToNextQues();*?
 
         //for (ArrayList<Integer> que : queObject.ques) {
        //     System.out.println(que);

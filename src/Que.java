@@ -22,7 +22,6 @@ public class Que {
 
             ques.add(que);
         }
-        N--;
         System.out.println(ques);
         return ques;
     }
@@ -30,21 +29,26 @@ public class Que {
     public ArrayList<ArrayList<Integer>> onToNextQues() {
         ArrayList<ArrayList<Integer>> ques1 = new ArrayList<>();
 
-        for(int i=1; i<=N; i++) {
+        for(int i=1; i<N; i++) {
             Random random = new Random();
             ArrayList<Integer> que1 = new ArrayList();
 
-          for(int j=1; j<=N; j++) {
-              int rand = random.nextInt(N);
-              int addToNewList = (ques.get(rand).get(0));
-              que1.add(addToNewList);
+            for(int j=1; j<N; j++) {
+                int rand = random.nextInt(N);
+                if(!que.isEmpty() || !ques.isEmpty()) {
+                    int addToNewList = (ques.get(rand).get(0));
+                    que1.add(addToNewList);
+                    ques.get(rand).remove(0);
+                    System.out.println("fuck coding");
 
-              ques.remove(que.remove(0));
+                } else if(que.isEmpty() ){
+                    System.out.println("Tom");
+                }
             }
             ques1.add(que1);
         }
         N--;
-       //onToNextQues();
+        //onToNextQues();
         System.out.println(ques1);
         return ques1;
     }
