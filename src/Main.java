@@ -5,15 +5,10 @@ public class Main {
     public static void main(String[] args) {
         Que queObject = new Que();
         queObject.createQues();
-        queObject.onToNextQues();
-       /* queObject.onToNextQues();
-        queObject.onToNextQues();
-        queObject.onToNextQues();
-        queObject.onToNextQues();
-        queObject.onToNextQues();
-        queObject.onToNextQues();
-        queObject.onToNextQues();
-        queObject.onToNextQues();*?
+        for(int i=0; i<9; i++) {
+            queObject.onToNextQues();
+        }
+
 
         //for (ArrayList<Integer> que : queObject.ques) {
        //     System.out.println(que);

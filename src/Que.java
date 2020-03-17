@@ -6,14 +6,14 @@ public class Que {
 
     private int N = 10;
     ArrayList<ArrayList<Integer>> ques = new ArrayList();
-    ArrayList<Integer> que;
+
     int name;
 
     public ArrayList<ArrayList<Integer>> createQues() {
 
         name = 1;
         for(int i=1; i<=N; i++) {
-            que = new ArrayList();
+            ArrayList<Integer> que = new ArrayList();
 
             for(int j=1; j<=N; j++) {
                 que.add(name);
@@ -26,7 +26,7 @@ public class Que {
         return ques;
     }
 
-    public ArrayList<ArrayList<Integer>> onToNextQues() {
+    public void onToNextQues() {
         ArrayList<ArrayList<Integer>> ques1 = new ArrayList<>();
 
         for(int i=1; i<N; i++) {
@@ -34,22 +34,22 @@ public class Que {
             ArrayList<Integer> que1 = new ArrayList();
 
             for(int j=1; j<N; j++) {
-                int rand = random.nextInt(N);
-                if(!que.isEmpty() || !ques.isEmpty()) {
-                    int addToNewList = (ques.get(rand).get(0));
-                    que1.add(addToNewList);
-                    ques.get(rand).remove(0);
-                    System.out.println("fuck coding");
 
-                } else if(que.isEmpty() ){
-                    System.out.println("Tom");
-                }
+                int rand = random.nextInt(N);
+
+                    try {
+                        int addToNewList = (ques.get(rand).get(0));
+                        que1.add(addToNewList);
+                        ques.get(rand).remove(0);
+                    }
+                        catch (IndexOutOfBoundsException e) {
+                            j--;
+                        }
             }
             ques1.add(que1);
         }
         N--;
-        //onToNextQues();
         System.out.println(ques1);
-        return ques1;
+        ques = ques1;
     }
 }
